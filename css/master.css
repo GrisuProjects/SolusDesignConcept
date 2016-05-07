@@ -152,10 +152,10 @@ body {
   background-color: transparent;
 }
 #panel #icon-task-list .app[active="true"] {
-  background-color: #757575;
+  background-color: #616161;
 }
 #panel #icon-task-list .app[active="true"]:hover {
-  background-color: #757575;
+  background-color: #616161;
 }
 #panel #icon-task-list .app .indicator {
   display: block;
@@ -228,7 +228,7 @@ body {
   width: 32px;
 }
 #panel #icon-task-list .app:hover {
-  background-color: #616161;
+  background-color: #757575;
 }
 #main {
   width: 100%;

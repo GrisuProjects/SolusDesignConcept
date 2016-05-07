@@ -148,7 +148,9 @@ var preview = (function() {
     pub.scroll = function(lel) {
         var temp; // stores the new breakpoint value
         var buttons = document.getElementsByClassName('window');
-        var help = buttons.length;
+        var help = buttons.length,
+            num,
+            attValue = buttons[0].getAttribute("breakpoint");
         var previewId = document.getElementById('preview');
 
         if (lel == 'ArrowLeft' && (Number(buttons[buttons.length - 1].getAttribute("breakpoint")) + 1) < 5) {
@@ -161,7 +163,13 @@ var preview = (function() {
             for (var i = 0; i < help; i++) { // actually scroll them
                 temp = Number(buttons[i].getAttribute("breakpoint")) + 1;
                 buttons[i].setAttribute("breakpoint", temp);
-                _centerWindows(buttons, previewId);
+                //_centerWindows(buttons, previewId);
+                if (attValue > 6) {
+                    num = getStyleRuleValue("left", "#main #preview .window");
+                } else {
+                    num = getStyleRuleValue("left", "#main #preview .window[breakpoint=\"" + attValue + "\"]");
+                }
+                wrapper.style.left = -Number(num.slice(0, num.length - 2)) + 20 + "px";
             }
 
         } else if (lel == 'ArrowRight' && (Number(buttons[0].getAttribute("breakpoint")) - 1) > 3) {
@@ -174,7 +182,13 @@ var preview = (function() {
             for (var i = 0; i < help; i++) { // actually scroll them
                 temp = Number(buttons[i].getAttribute("breakpoint")) - 1;
                 buttons[i].setAttribute("breakpoint", temp);
-                _centerWindows(buttons, previewId);
+                //_centerWindows(buttons, previewId);
+                if (attValue > 6) {
+                    num = getStyleRuleValue("left", "#main #preview .window");
+                } else {
+                    num = getStyleRuleValue("left", "#main #preview .window[breakpoint=\"" + attValue + "\"]");
+                }
+                wrapper.style.left = -Number(num.slice(0, num.length - 2)) + 20 + "px";
             }
         }
 
@@ -385,3 +399,12 @@ function panelSize(size) {
     // rules[2].style.height = 13 * size + "px";
     document.getElementById('panel').setAttribute("size", size);
 }
+var background = (function() {
+    var pub = {};
+
+    pub.change = function(value) {
+        document.getElementsByTagName('body')[0].style.backgroundImage = "url(../SolusDesignConcept/" + value + ")";
+    }
+
+    return pub;
+})();
