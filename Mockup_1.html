@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Solus Operating System Panel Mockup</title>
+    <link rel="stylesheet" href="css/master.css" media="screen" title="Main CSS" charset="utf-8">
+  </head>
+
+  <body>
+    <div id="panel" size="3">
+      <div id="menu-button"></div>
+      <div id="icon-task-list">
+
+        <div class="app" onclick="previewAction(0);" oncontextmenu="menuAction(0);return false;" windowCount="0" active="false">
+          <div class="indicator">
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+          </div>
+          <div class="icon"><img src="internet-mail.png" alt="calc" /></div>
+        </div>
+        <div class="app" onclick="previewAction(1);" oncontextmenu="menuAction(1); return false;" windowCount="0" active="false">
+          <div class="indicator">
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+          </div>
+          <div class="icon"><img src="vlc.png" alt="vlc" /></div>
+        </div>
+        <div class="app" onclick="previewAction(2);" oncontextmenu="menuAction(2); return false;" windowCount="0" active="false">
+          <div class="indicator">
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+          </div>
+          <div class="icon"><img src="calendar.png" alt="calendar" /></div>
+        </div>
+        <div class="app" onclick="previewAction(3);" oncontextmenu="menuAction(3); return false;" windowCount="0" active="false">
+          <div class="indicator">
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+          </div>
+          <div class="icon"><img src="codeblocks.png" alt="codeblocks" /></div>
+        </div>
+        <div class="app" onclick="previewAction(4);" oncontextmenu="menuAction(4); return false;" windowCount="0" active="false">
+          <div class="indicator">
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+          </div>
+          <div class="icon"><img src="applets-screenshooter.png" alt="applets-screenshooter" /></div>
+        </div>
+        <div class="app" onclick="previewAction(5);" oncontextmenu="menuAction(5); return false;" windowCount="0" active="false">
+          <div class="indicator">
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+          </div>
+          <div class="icon"><img src="internet-web-browser.png" alt="internet-web-browser" /></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="main">
+      <div id="preview" boolean="false">
+        <section onclick="apps[preview.position].addWindow();">+ Launch new window</section>
+        <section id="close-button" onclick="preview.hide();">X</section>
+      </div>
+
+      <div id="right-click-menu" boolean="false">
+        <section class="entry" clickable="true" onclick="apps[menu.position].addWindow();">+ Launch new window</section>
+        <section class="entry" clickable="true" onclick="apps[menu.position].closeAllWindows();">- Close all windows</section>
+        <section class="entry" clickable="false">* Pin to panel</section>
+      </div>
+      <div class="preferences">
+        <h1>Panel size</h1>
+        <ul>
+          <li>
+            <input type="radio" name="panel-size" value="1" onclick="panelSize(2);"> 1</li>
+          <li>
+            <input type="radio" name="panel-size" value="2" checked="checked" onclick="panelSize(3);"> 2</li>
+          <li>
+            <input type="radio" name="panel-size" value="3" onclick="panelSize(4);"> 3</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+
+  </body>
+
+</html>

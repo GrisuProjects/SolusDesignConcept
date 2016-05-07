@@ -1,0 +1,397 @@
+* {
+  position: relative;
+  transition: 150ms;
+  margin: 0;
+}
+body {
+  width: 100%;
+  background-attachment: fixed;
+  background-image: url(../IMG_0986.JPG);
+  background-size: cover;
+  background-position: center;
+}
+#panel[size="2"] {
+  height: 39px;
+}
+#panel[size="2"] #menu-button {
+  width: 29px;
+  height: 29px;
+  margin: 5px;
+}
+#panel[size="2"] #icon-task-list .app {
+  width: 39px;
+  height: 39px;
+}
+#panel[size="2"] #icon-task-list .app .indicator {
+  height: 3px;
+  width: 15px;
+  margin: 2px auto;
+}
+#panel[size="2"] #icon-task-list .app .indicator .blob {
+  width: 3px;
+  height: 3px;
+  border-radius: 1px;
+}
+#panel[size="2"] #icon-task-list .app .indicator .blob:nth-child(2) {
+  margin: 0 0 0 3px;
+}
+#panel[size="2"] #icon-task-list .app[windowCount="1"] .indicator {
+  width: 3px;
+}
+#panel[size="2"] #icon-task-list .app[windowCount="2"] .indicator {
+  width: 9px;
+}
+#panel[size="2"] #icon-task-list .app[windowCount="2"] .indicator .blob:nth-child(2) {
+  margin: -3px;
+}
+#panel[size="2"] #icon-task-list .app[active="true"] .indicator .blob:nth-child(1) {
+  width: 39px;
+}
+#panel[size="2"] #icon-task-list .app[active="true"] .indicator .blob:nth-child(2) {
+  margin-left: -3px;
+}
+#panel[size="2"] #icon-task-list .app[active="true"] .indicator {
+  width: 39px;
+  margin: 0 auto 5px;
+  height: 4px;
+}
+#panel[size="2"] #icon-task-list .app .icon {
+  display: block;
+  height: 25px;
+  width: 25px;
+  margin: 0 7px 7px;
+}
+#panel[size="2"] #icon-task-list .app .icon img {
+  height: 25px;
+  width: 25px;
+}
+#panel[size="4"] {
+  height: 65px;
+}
+#panel[size="4"] #menu-button {
+  width: 49px;
+  height: 49px;
+  margin: 8px;
+}
+#panel[size="4"] #icon-task-list .app {
+  width: 65px;
+  height: 65px;
+}
+#panel[size="4"] #icon-task-list .app .indicator {
+  height: 5px;
+  width: 25px;
+  /* 5*5 */
+  margin: 4px auto;
+}
+#panel[size="4"] #icon-task-list .app .indicator .blob {
+  width: 5px;
+  height: 5px;
+  border-radius: 2px;
+}
+#panel[size="4"] #icon-task-list .app .indicator .blob:nth-child(2) {
+  margin: 0 0 0 5px;
+}
+#panel[size="4"] #icon-task-list .app[windowCount="1"] .indicator {
+  width: 5px;
+}
+#panel[size="4"] #icon-task-list .app[windowCount="2"] .indicator {
+  width: 15px;
+}
+#panel[size="4"] #icon-task-list .app[windowCount="2"] .indicator .blob:nth-child(2) {
+  margin: -5px;
+}
+#panel[size="4"] #icon-task-list .app[active="true"] .indicator .blob:nth-child(1) {
+  width: 65px;
+}
+#panel[size="4"] #icon-task-list .app[active="true"] .indicator .blob:nth-child(2) {
+  margin-left: -5px;
+}
+#panel[size="4"] #icon-task-list .app[active="true"] .indicator {
+  width: 65px;
+  margin: 0 auto 10px;
+  height: 6px;
+}
+#panel[size="4"] #icon-task-list .app .icon {
+  display: block;
+  height: 39px;
+  width: 39px;
+  margin: 0 13px 13px;
+}
+#panel[size="4"] #icon-task-list .app .icon img {
+  height: 39px;
+  width: 39px;
+}
+#panel {
+  display: block;
+  height: 52px;
+  width: 100%;
+  background-color: #424242;
+  z-index: 16;
+  box-shadow: 0px 2px 3px #212121;
+}
+#panel #menu-button {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  margin: 8px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+}
+#panel #icon-task-list {
+  display: inline-block;
+  position: absolute;
+  width: auto;
+  height: 100%;
+}
+#panel #icon-task-list .app {
+  display: inline-block;
+  float: left;
+  width: 52px;
+  height: 52px;
+  top: 0;
+  background-color: transparent;
+}
+#panel #icon-task-list .app[active="true"] {
+  background-color: #757575;
+}
+#panel #icon-task-list .app[active="true"]:hover {
+  background-color: #757575;
+}
+#panel #icon-task-list .app .indicator {
+  display: block;
+  height: 4px;
+  width: 20px;
+  margin: 3px auto;
+  overflow: hidden;
+  background-color: transparent;
+}
+#panel #icon-task-list .app .indicator .blob {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: whitesmoke;
+}
+#panel #icon-task-list .app .indicator .blob:nth-child(1) {
+  float: left;
+  z-index: 3;
+}
+#panel #icon-task-list .app .indicator .blob:nth-child(2) {
+  margin: 0 0 0 4px;
+  float: left;
+}
+#panel #icon-task-list .app .indicator .blob:nth-child(3) {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+}
+#panel #icon-task-list .app[windowCount="0"] .indicator .blob:nth-child(2) {
+  margin: 0;
+}
+#panel #icon-task-list .app[windowCount="0"] .indicator {
+  transition: 100ms;
+  width: 0px;
+}
+#panel #icon-task-list .app[windowCount="1"] .indicator {
+  width: 4px;
+}
+#panel #icon-task-list .app[windowCount="1"] .indicator .blob:nth-child(2) {
+  margin: 0;
+}
+#panel #icon-task-list .app[windowCount="2"] .indicator {
+  width: 12px;
+}
+#panel #icon-task-list .app[windowCount="2"] .indicator .blob:nth-child(2) {
+  margin: -4px;
+}
+#panel #icon-task-list .app[active="true"] .indicator .blob:nth-child(1) {
+  width: 52px;
+  background-color: #448aff;
+  margin: 0;
+  border-radius: 0;
+}
+#panel #icon-task-list .app[active="true"] .indicator {
+  width: 52px;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+#panel #icon-task-list .app .icon {
+  display: block;
+  height: 32px;
+  width: 32px;
+  margin: 0 10px 10px;
+  background-color: transparent;
+}
+#panel #icon-task-list .app .icon img {
+  height: 32px;
+  width: 32px;
+}
+#panel #icon-task-list .app:hover {
+  background-color: #616161;
+}
+#main {
+  width: 100%;
+  height: 100%;
+}
+#main #preview {
+  position: absolute;
+  display: inline-block;
+  height: 280px;
+  /* 8*35 */
+  width: 572px;
+  /* 11*52 */
+  top: -280px;
+  transition: 140ms;
+  background-color: #006064;
+  color: white;
+  font-family: monospace;
+  overflow: hidden;
+}
+#main #preview section {
+  display: inline-block;
+  padding: 14px;
+  height: 14px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 502px;
+  /* 572px - (margin + font-size) - margin*/
+}
+#main #preview section:hover {
+  background-color: #00838f;
+}
+#main #preview section#close-button {
+  width: 14px;
+  height: 14px;
+  /*height of the font-size(to make it a square)*/
+  text-align: center;
+  float: right;
+  background-color: #b71c1c;
+}
+#main #preview section#close-button:hover {
+  background-color: #c62828;
+}
+#main #preview[boolean="true"] {
+  top: 0px;
+  box-shadow: 0px 1px 3px #212121;
+  z-index: 10;
+}
+#main #preview #wrapper {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+#main #preview .window {
+  /*breakpoint 7+*/
+  display: block;
+  height: 190px;
+  width: 304px;
+  margin-bottom: -190px;
+  left: 20px;
+  top: 24px;
+  color: #212121;
+  background-color: #f5f5f5;
+}
+#main #preview .window[breakpoint="6"] {
+  left: 30px;
+  top: 22px;
+  height: 194px;
+  /* stay with 16:10 ratio*/
+  width: 310px;
+  margin-bottom: -194px;
+  box-shadow: 0 1px 4px 0.3px black;
+}
+#main #preview .window[breakpoint="5"] {
+  left: 60px;
+  top: 20px;
+  height: 198px;
+  /* stay with 16:10 ratio*/
+  width: 317px;
+  margin-bottom: -198px;
+  box-shadow: 0 1px 5px 0.3px black;
+}
+#main #preview .window[breakpoint="4"] {
+  left: 150px;
+  top: 18px;
+  height: 202px;
+  /* stay with 16:10 ratio*/
+  width: 322px;
+  margin-bottom: -202px;
+  box-shadow: 0 1px 6px 0.3px black;
+}
+#main #preview .window[breakpoint="3"] {
+  left: 300px;
+  top: 16px;
+  height: 206px;
+  /* stay with 16:10 ratio*/
+  width: 330px;
+  margin-bottom: -206px;
+  box-shadow: 0 1px 7px 0.3px black;
+}
+#main #preview .window[breakpoint="2"] {
+  left: 500px;
+  top: 14px;
+  height: 210px;
+  /* stay with 16:10 ratio*/
+  width: 336px;
+  margin-bottom: -210px;
+  box-shadow: 0 1px 8px 0.3px black;
+}
+#main #preview .window[breakpoint="1"] {
+  left: 700px;
+  top: 12px;
+  height: 214px;
+  /* stay with 16:10 ratio*/
+  width: 342px;
+  margin-bottom: -214px;
+  box-shadow: 0 1px 9px 0.3px black;
+}
+#main #preview .window .header {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 22px;
+  font-size: 15px;
+  padding: 9px 3px 9px 42px;
+  background-color: #9e9e9e;
+}
+#main #right-click-menu {
+  display: inline-block;
+  position: absolute;
+  background-color: white;
+  width: 312px;
+  /* 6*52px */
+  font-family: monospace;
+  color: white;
+}
+#main #right-click-menu section {
+  padding: 14px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #006064;
+}
+#main #right-click-menu section:hover {
+  opacity: 0.8;
+}
+#main #right-click-menu section[clickable="false"] {
+  color: #bdbdbd;
+}
+#main #right-click-menu section[clickable="false"]:hover {
+  opacity: 0.9;
+}
+#main #right-click-menu[boolean="true"] {
+  top: 0px;
+  box-shadow: 0px 1px 3px #212121;
+  z-index: 10;
+}
+#main .preferences {
+  background-color: whitesmoke;
+  opacity: 0.7;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+}
+#main .preferences ul {
+  list-style-type: none;
+}
