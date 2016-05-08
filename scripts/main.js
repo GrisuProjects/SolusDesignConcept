@@ -150,11 +150,12 @@ var preview = (function() {
         var buttons = document.getElementsByClassName('window');
         var help = buttons.length,
             num,
-            attValue = buttons[0].getAttribute("breakpoint");
+            attValue;
         var previewId = document.getElementById('preview');
+        var intervall;
 
         if (lel == 'ArrowLeft' && (Number(buttons[buttons.length - 1].getAttribute("breakpoint")) + 1) < 5) {
-            for (var i = 0; i < buttons.length; i++) { // get the ones that needs to get scrolled
+            for (var i = 0; i < buttons.length; i++) { // get the windows that needs to get scrolled
                 if (buttons[i].getAttribute("breakpoint") == 1) {
                     help = i + 1;
                     break;
@@ -164,6 +165,7 @@ var preview = (function() {
                 temp = Number(buttons[i].getAttribute("breakpoint")) + 1;
                 buttons[i].setAttribute("breakpoint", temp);
                 //_centerWindows(buttons, previewId);
+                attValue = buttons[0].getAttribute("breakpoint");
                 if (attValue > 6) {
                     num = getStyleRuleValue("left", "#main #preview .window");
                 } else {
@@ -173,7 +175,7 @@ var preview = (function() {
             }
 
         } else if (lel == 'ArrowRight' && (Number(buttons[0].getAttribute("breakpoint")) - 1) > 3) {
-            for (var i = 0; i < buttons.length; i++) { // get the ones that needs to get scrolled
+            for (var i = 0; i < buttons.length; i++) { // get the windows that needs to get scrolled
                 if (buttons[i].getAttribute("breakpoint") == 1) {
                     help = i;
                     break;
@@ -183,12 +185,13 @@ var preview = (function() {
                 temp = Number(buttons[i].getAttribute("breakpoint")) - 1;
                 buttons[i].setAttribute("breakpoint", temp);
                 //_centerWindows(buttons, previewId);
+                attValue = buttons[0].getAttribute("breakpoint");
                 if (attValue > 6) {
                     num = getStyleRuleValue("left", "#main #preview .window");
                 } else {
                     num = getStyleRuleValue("left", "#main #preview .window[breakpoint=\"" + attValue + "\"]");
                 }
-                wrapper.style.left = -Number(num.slice(0, num.length - 2)) + 20 + "px";
+                //intervall = setIntervall(function(){})
             }
         }
 
