@@ -148,11 +148,14 @@ var preview = (function() {
     pub.scroll = function(lel) {
         var temp; // stores the new breakpoint value
         var buttons = document.getElementsByClassName('window');
-        var help = buttons.length;
+        var help = buttons.length,
+            num,
+            attValue;
         var previewId = document.getElementById('preview');
+        var intervall;
 
         if (lel == 'ArrowLeft' && (Number(buttons[buttons.length - 1].getAttribute("breakpoint")) + 1) < 5) {
-            for (var i = 0; i < buttons.length; i++) { // get the ones that needs to get scrolled
+            for (var i = 0; i < buttons.length; i++) { // get the windows that needs to get scrolled
                 if (buttons[i].getAttribute("breakpoint") == 1) {
                     help = i + 1;
                     break;
@@ -161,11 +164,18 @@ var preview = (function() {
             for (var i = 0; i < help; i++) { // actually scroll them
                 temp = Number(buttons[i].getAttribute("breakpoint")) + 1;
                 buttons[i].setAttribute("breakpoint", temp);
-                _centerWindows(buttons, previewId);
+                //_centerWindows(buttons, previewId);
+                attValue = buttons[0].getAttribute("breakpoint");
+                if (attValue > 6) {
+                    num = getStyleRuleValue("left", "#main #preview .window");
+                } else {
+                    num = getStyleRuleValue("left", "#main #preview .window[breakpoint=\"" + attValue + "\"]");
+                }
+                wrapper.style.left = -Number(num.slice(0, num.length - 2)) + 20 + "px";
             }
 
         } else if (lel == 'ArrowRight' && (Number(buttons[0].getAttribute("breakpoint")) - 1) > 3) {
-            for (var i = 0; i < buttons.length; i++) { // get the ones that needs to get scrolled
+            for (var i = 0; i < buttons.length; i++) { // get the windows that needs to get scrolled
                 if (buttons[i].getAttribute("breakpoint") == 1) {
                     help = i;
                     break;
@@ -174,7 +184,13 @@ var preview = (function() {
             for (var i = 0; i < help; i++) { // actually scroll them
                 temp = Number(buttons[i].getAttribute("breakpoint")) - 1;
                 buttons[i].setAttribute("breakpoint", temp);
-                _centerWindows(buttons, previewId);
+                //_centerWindows(buttons, previewId);
+                attValue = buttons[0].getAttribute("breakpoint");
+                if (attValue > 6) {
+                    num = getStyleRuleValue("left", "#main #preview .window");
+                } else {
+                    num = getStyleRuleValue("left", "#main #preview .window[breakpoint=\"" + attValue + "\"]");
+                }
             }
         }
 
@@ -266,15 +282,11 @@ for (var i = 0; i < apps.length; i++) {
             pub.windowCount = 0;
 
             if (pub.active) { // if app was active
-                console.log("active?: " + pub.active);
                 active = undefined; // no active app anymore
                 pub.active = true;
-                console.log(pub.active);
                 elem.setAttribute("active", "false"); // make app inactive
             }
             menu.hide();
-            console.log("winCount: " + pub.windowCount);
-            console.log("active: " + pub.active);
         };
         pub.addWindow = function() {
             pub.windowCount++;
@@ -368,7 +380,7 @@ function menuAction(clicked) {
 /** Rezises the panel according to the cssRules
  */
 function panelSize(size) {
-    var rules = document.styleSheets[0]['cssRules'];
+    //var rules = document.styleSheets[0]['cssRules'];
     //var selector = rule[].selectorText;
     //var value = rule[].value;
     /** Make object that holds all selectors that should be modified and it holds also what properties should change and with what values
@@ -385,3 +397,12 @@ function panelSize(size) {
     // rules[2].style.height = 13 * size + "px";
     document.getElementById('panel').setAttribute("size", size);
 }
+var background = (function() {
+    var pub = {};
+
+    pub.change = function(value) {
+        document.getElementsByTagName('body')[0].style.backgroundImage = "url(../SolusDesignConcept/" + value + ")";
+    }
+
+    return pub;
+})();
