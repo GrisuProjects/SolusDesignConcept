@@ -382,7 +382,7 @@ function menuAction(clicked) {
 /** Rezises the panel according to the cssRules
  */
 function panelSize(size) {
-    var rules = document.styleSheets[0]['cssRules'];
+    //var rules = document.styleSheets[0]['cssRules'];
     //var selector = rule[].selectorText;
     //var value = rule[].value;
     /** Make object that holds all selectors that should be modified and it holds also what properties should change and with what values
