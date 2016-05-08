@@ -191,7 +191,6 @@ var preview = (function() {
                 } else {
                     num = getStyleRuleValue("left", "#main #preview .window[breakpoint=\"" + attValue + "\"]");
                 }
-                //intervall = setIntervall(function(){})
             }
         }
 
@@ -283,15 +282,11 @@ for (var i = 0; i < apps.length; i++) {
             pub.windowCount = 0;
 
             if (pub.active) { // if app was active
-                console.log("active?: " + pub.active);
                 active = undefined; // no active app anymore
                 pub.active = true;
-                console.log(pub.active);
                 elem.setAttribute("active", "false"); // make app inactive
             }
             menu.hide();
-            console.log("winCount: " + pub.windowCount);
-            console.log("active: " + pub.active);
         };
         pub.addWindow = function() {
             pub.windowCount++;
