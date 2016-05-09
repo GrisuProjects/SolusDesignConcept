@@ -108,7 +108,7 @@ var preview = (function() {
             header.setAttribute("class", "header");
             btn.appendChild(header);
             btn.setAttribute("class", "window");
-            btn.setAttribute("onclick", "");
+            btn.setAttribute("onclick", "apps[preview.position].makeActive()");
 
             wrapper.appendChild(btn);
         }
@@ -309,6 +309,13 @@ for (var i = 0; i < apps.length; i++) {
         };
         pub.closeWindow = function() {};
         pub.pinToPanel = function() {};
+        pub.makeActive = function() {
+            if ((active != h) && (active != undefined)) { // When there was already an active app
+                document.getElementsByClassName('app')[active].setAttribute("active", "false"); // old active
+            }
+            elem.setAttribute("active", "true");
+            preview.hide();
+        };
 
         return pub;
     })();
