@@ -3,7 +3,7 @@ This repository should help the Solus Project, maker of the Solus Operating Syst
 [Solus Project Website](https://solus-project.com/)
 
 # Usage
-Simply click [this link])(http://grisuprojects.github.io/SolusDesignConcept) and you are ready to go :D
+Simply click [this link](http://grisuprojects.github.io/SolusDesignConcept) and you are ready to go :D
 
 ### What else?
 Besides of that you can click the icons with left- or right-click and also you can **scroll that preview list**(that comes up when you click an app with more than two dots).
