@@ -2,6 +2,8 @@
 This repository should help the Solus Project, maker of Solus and Budgie Desktop.
 [Solus Project Website](https://solus-project.com/)
 
+For more details and context, pleae refer to [this issue](https://github.com/budgie-desktop/budgie-desktop/issues/439)
+
 # Usage
 Simply click [this link](http://grisuprojects.github.io/SolusDesignConcept) and you are ready to go :D
 
